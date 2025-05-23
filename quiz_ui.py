@@ -33,7 +33,7 @@ class QuizInterface:
         # Question canvas
         self.canvas = Canvas(width=400, height=250, bg=CANVAS_COLOR, bd=0, highlightthickness=0)
         self.question_text = self.canvas.create_text(
-            200, 125, width=360,
+            200, 125, width=280,
             text="Question goes here",
             fill=THEME_COLOR,
             font=(FONT_NAME, 18, "italic")
@@ -82,4 +82,4 @@ class QuizInterface:
     def give_feedback(self, is_right):
         self.canvas.config(bg=CORRECT_COLOR if is_right else WRONG_COLOR)
         self.feedback_label.config(text="✅ Nice!" if is_right else "❌ Oof!")
-        self.window.after(1000, self.get_next_question)
+        self.window.after(900, self.get_next_question)
